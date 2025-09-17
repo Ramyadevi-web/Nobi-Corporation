@@ -9,7 +9,7 @@ export default function Navbar() {
     }
 
   return (
-    <nav className="bg-transparent fixed top-0 left-0 w-full z-50">
+    <nav className="bg-transparent backdrop-blur fixed mb-5 pb-5 top-0 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <span>
             <img src="/images/logo.png" alt="Nobi Logo" className="h-20 object-contain"/> 

@@ -73,3 +73,16 @@ html{
   src: url('./assets/fonts/signategrotesk-black.ttf');
   font-weight: 700;
 }
+
+#customButton {
+  background-color: #20576E;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+#customButton:hover {
+  background-color: #174755;
+}
