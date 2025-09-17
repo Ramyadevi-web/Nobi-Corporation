@@ -1,18 +1,40 @@
-import { useState, useScroll } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
 
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen)
     }
 
+    useEffect(()=>{
+
+      const handleScroll = () =>{
+        if(window.scrollY > 50){
+          setIsScrolled(true)
+        }else{
+          setIsScrolled(false)
+        }
+      };
+
+      window.addEventListener('scroll',handleScroll)
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll)
+      }
+      
+    },[])
+
   return (
-    <nav className="bg-transparent backdrop-blur fixed mb-5 pb-5 top-0 left-0 w-full z-50">
+    <nav className={`bg-transparent backdrop-blur fixed mb-5 top-0 left-0 w-full z-50 ${isScrolled ? 'py-1' : 'py-3'}`}>
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <span>
-            <img src="/images/logo.png" alt="Nobi Logo" className="h-20 object-contain"/> 
+          {
+            isScrolled ? <img src="/images/N_Logo.png" alt="Nobi Logo" className="h-12 object-contain transition-all duration-300"/> 
+            : <img src="/images/logo.png" alt="Nobi Logo" className="h-20 object-contain transition-all duration-300"/> 
+          }
         </span>
 
         {/* Desktop Menu */}
