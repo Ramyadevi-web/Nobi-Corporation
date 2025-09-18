@@ -78,7 +78,7 @@ function Contact() {
       </form>
 
       {/* Job Form */}
-      <form ref={jobFormRef} className='flex flex-col bg-transparent rounded p-6 w-full md:w-1/2' onSubmit={handleJobSubmit}>
+      {/* <form ref={jobFormRef} className='flex flex-col bg-transparent rounded p-6 w-full md:w-1/2' onSubmit={handleJobSubmit}>
         <h3 className='text-2xl font-semibold mb-4 text-[#20576E] text-center'>Join Our Team</h3>
         <input type="text" name="name" placeholder="Full Name" required className={inputClasses} />
         <input type="email" name="email" placeholder="Email Address" required className={inputClasses} />
@@ -87,7 +87,6 @@ function Contact() {
         <textarea name="cover_letter" placeholder="Cover Letter" required className={inputClasses + ' h-20'}></textarea>
         <input type="text" name="linkedin" placeholder="LinkedIn Profile URL" className={inputClasses} />
 
-        {/* Custom File Upload */}
         <div className='flex items-center mb-3'>
           <button type="button" onClick={handleFileClick} className='bg-gray-400 text-white px-4 py-2 rounded hover:bg-[#1b4451] transition'>
             Upload Resume (PDF/DOCX)
@@ -99,7 +98,7 @@ function Contact() {
         <button type="submit" className='bg-[#20576E] text-white p-2 w-1/4 mx-auto flex items-center justify-center rounded hover:bg-[#1b4451] transition'>
           Submit
         </button>
-      </form>
+      </form> */}
 
     </section>
   );
