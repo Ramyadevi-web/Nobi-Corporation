@@ -13,7 +13,7 @@ export default {
       fontFamily: {
         custom: ["Source Sans Pro", "-apple-system", "BlinkMacSystemFont", "Segeo UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
         // custom: ['customFont', 'sans-serif']
-      },
+      }
     },
   },
   plugins: [],

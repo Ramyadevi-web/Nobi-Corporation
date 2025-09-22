@@ -1,6 +1,6 @@
   import { useState,useEffect, useRef } from 'react'
   import { Canvas } from '@react-three/fiber'
-  import businessDesc from '../ContextAPI/businessDesc';
+  import { businessData } from '../data/business';
   import useScrollAnimation  from '../hooks/useScrollAnimation';
   import Jellyfish from './JellyFish';
 import Tower from './Tower';
@@ -34,7 +34,6 @@ useEffect(() => {
       entries.forEach((entry) => {
         const target = entry.target;
         if (entry.isIntersecting) {
-
           target.classList.add('animate-slideInRight');
         } else {
           target.classList.remove('animate-slideInRight');
@@ -73,12 +72,6 @@ useEffect(() => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isModalOpen]); // Only depend on isModalOpen now
 
-    const handleClickLink = (e,topicIndex) => {
-      e.preventDefault(); 
-      setSelectedDesc(businessDesc[topicIndex])
-      setActiveTopicIndex(topicIndex);
-      setIsModalOpen(true)
-    }
 
     return (
       <section id='business' className={`${bgClass} w-full`}>
@@ -95,7 +88,7 @@ useEffect(() => {
             className="w-full h-full"
           >
             {/* 👇 JELLYFISH — Top Left */}
-            <Jellyfish src="./images/img2.png" size={220} />
+            {/* <Jellyfish src="./images/img2.png" size={220} /> */}
 
             {/* 👇 TOWER — Center Right */}
             {/* <Tower src="./images/img2.png" size={200} /> */}
@@ -129,9 +122,11 @@ useEffect(() => {
                   <a href='#'
                   onClick={(e) =>{
                     e.preventDefault();
-                    setIsModalOpen(true)
-                    handleClickLink(e,index)
-                  }}>{topic}</a>
+                    setIsModalOpen(true);
+                    setActiveTopicIndex(index);
+                    setSelectedDesc(topic.desc)
+                    
+                  }}>{topic.topic}</a>
 
                 {((activeTopicIndex === index) && isModalOpen) ? (
                  <div ref={modalRef} className="mt-3 p-2 animate-fadeInUp bg-[#ebdfe1] rounded shadow-lg w-full max-w-lg mx-auto">

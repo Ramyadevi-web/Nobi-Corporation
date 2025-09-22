@@ -1,70 +1,89 @@
 import { useEffect, useState } from "react";
+import NobiLogo from "/images/logo.png";
+import NLogo from "/images/N_Logo.png";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen)
-    }
-
-    useEffect(()=>{
-
-      const handleScroll = () =>{
-        if(window.scrollY > 50){
-          setIsScrolled(true)
-        }else{
-          setIsScrolled(false)
-        }
-      };
-
-      window.addEventListener('scroll',handleScroll)
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll)
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
       }
-      
-    },[])
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className={`bg-transparent backdrop-blur fixed mb-5 top-0 left-0 w-full z-50 ${isScrolled ? 'py-1' : 'py-3'}`}>
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <span>
-          {
-            isScrolled ? <img src="/images/N_Logo.png" alt="Nobi Logo" className="h-12 object-contain transition-all duration-300"/> 
-            : <img src="/images/logo.png" alt="Nobi Logo" className="h-20 object-contain transition-all duration-300"/> 
-          }
-        </span>
+    <nav
+      className={`bg-transparent backdrop-blur-md fixed top-0 left-0 w-full z-50 ${
+        isScrolled ? "py-1" : "py-3"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
+        <div className={` ${isScrolled ? 'h-10' : 'h-16'} w-16 perspective-1000`}>
+          <div className={`relative w-full h-full transition-transform duration-700 ease-in-out transform-style-preserve-3d ${
+            isScrolled ? "rotate-y-180" : "rotate-y-0"
+          }`}>
+            <img
+              src={NobiLogo}
+              alt="Nobi Logo"
+              className="absolute w-full h-full object-contain backface-hidden rotate-y-0"
+            />
+            <img
+              src={NLogo}
+              alt="N Logo"
+              className="absolute w-full h-full object-contain backface-hidden rotate-y-180"
+            />
+          </div>
+        </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 text-blue pointer">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#business">Business</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul className="hidden md:flex gap-6 text-blue font-medium">
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#business">Business</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden cursor-pointer"  onClick={() => toggleMenu()}>
-           <svg xmlns="http://www.w3.org/2000/svg" 
-           viewBox="0 0 640 640"
-           width={24}
-           height={24}
+        <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 640"
+            width={24}
+            height={24}
             fill={menuOpen ? "blue" : "black"}
-           >
-           <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
-           </svg>
+          >
+            <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z" />
+          </svg>
 
-           {
-            menuOpen && 
-            <div className="flex flex-col items-center justify-center absolute top-10 w-full right-0 bg-white shadow-lg p-4 rounded-md gap-4">
-                <a href="#home">Home</a>
-                <a href="#business">Business</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+          {menuOpen && (
+            <div className="flex flex-col items-center justify-center absolute top-12 right-0 w-full bg-white shadow-lg p-4 rounded-md gap-4">
+              <a href="#home">Home</a>
+              <a href="#business">Business</a>
+              <a href="#about">About</a>
+              <a href="#contact">Contact</a>
             </div>
-           }
+          )}
         </div>
       </div>
     </nav>
