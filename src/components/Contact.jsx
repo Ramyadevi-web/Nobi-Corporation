@@ -62,7 +62,7 @@ function Contact() {
     <section id='contact' className='flex flex-col md:flex-row items-stretch gap-10 justify-center bg-radial-ellipse-even py-10 px-5'>
       
       {/* Service Form */}
-      <form ref={serviceFormRef} name='contact' data-netlify='true' method = 'POST' className='flex flex-col bg-transparent rounded p-6 w-full md:w-1/2' onSubmit={handleServiceSubmit}>
+      <form ref={serviceFormRef} name='contact' data-netlify='true' method = 'POST' className='flex flex-col bg-transparent rounded p-6 w-full md:w-1/2'>
         <h3 className='text-2xl font-semibold mb-4 text-[#20576E] text-center'>Request Our Service</h3>
         <input type="text" name="name" placeholder="Full Name" required className={inputClasses} />
         <input type='hidden' name='form-name' value='contact'/>
