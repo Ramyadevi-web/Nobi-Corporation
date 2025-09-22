@@ -53,7 +53,7 @@ function Contact() {
     
     fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type':'applicaiton/x-www-form-urlencoded'},
+      headers: { 'Content-Type':'application/x-www-form-urlencoded'},
       body:new URLSearchParams(formData).toString()
     }
     ).then(() =>{
