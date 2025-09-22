@@ -77,7 +77,7 @@ export default function Navbar() {
           </svg>
 
           {menuOpen && (
-            <div className="flex flex-col items-center justify-center absolute top-12 right-0 w-full bg-white shadow-lg p-4 rounded-md gap-4">
+            <div className="flex flex-col items-center justify-center fixed top-12 right-0 w-full bg-white shadow-lg p-4 rounded-md gap-4">
               <a href="#home">Home</a>
               <a href="#business">Business</a>
               <a href="#about">About</a>

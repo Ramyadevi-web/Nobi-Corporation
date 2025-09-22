@@ -29,12 +29,12 @@ function About() {
     <section id='about' className='flex flex-col md:flex-row items-center justify-center bg-radial-ellipse'>
       
       {/* Left Column */}
-      <div  className='flex flex-col slideLeft items-center uppercase justify-center w-full md:w-1/2 px-5 py-5'>
+      <div  className='flex flex-col slideLeft items-center justify-center w-full md:w-1/2 px-5 py-5'>
         <div ref = {leftAnimationRef1} className='mx-5 my-5 px-5 py-5 flex flex-wrap text-2xl'>
            Nobi Corporation brings to you integrated solutions for your business, ranging from business development, interior designing, exhibitions to branding. 
         </div>
         <div ref = {leftAnimationRef2} className='mx-5 my-5 px-5 py-5 text-2xl'>
-          A coming together of dedication, expertise, & passion; an in a nutshell explanation of the characteristic of the team at Nobi Corporation. We work round the clock to ensure that your brand’s story is communicated perfectly. Our expertise lies in an array of domains from interior designing, website designing, digital marketing & film production. 
+          A coming together of dedication, expertise, & passion. We work round the clock to ensure that your brand’s story is communicated perfectly. Our expertise lies in an array of domains from interior designing, website designing, digital marketing & film production.
         </div>
       </div>
 

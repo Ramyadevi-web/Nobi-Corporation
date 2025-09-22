@@ -4,9 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  @apply font-custom;
+@font-face {
+  font-family: 'Sansation Light';
+  src: url('./assets/font/Sansation/Sansation-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
 }
+
+body{
+  font-family: 'Sansation Light', sans-serif;
+}
+
 
 @keyframes fadeInUp{
   from{

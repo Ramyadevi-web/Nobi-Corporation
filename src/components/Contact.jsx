@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { AlwaysStencilFunc } from 'three';
 
 function Contact() {
   const serviceFormRef = useRef(null);
@@ -42,9 +43,15 @@ function Contact() {
     const formData = new FormData(form);
     const email = formData.get('email');
     const phone = formData.get('phone');
+    const companyName = formData.get('companyName');
+    const services = formData.get('services');
+    const requirement = formData.get('requirement');
+    const contactTime = formData.get('contactTime');
 
     if (!validateEmail(email)) return alert('Please enter a valid email.');
     if (!validatePhone(phone)) return alert('Please enter a valid 10-digit phone number.');
+    alert('Form submitted successsfully');
+    console.log(Object.fromEntries(formData.entries()))
 
     form.reset();
   };
@@ -61,10 +68,10 @@ function Contact() {
         <input type='hidden' name='form-name' value='contact'/>
         <input type="email" name="email" placeholder="Email Address" required className={inputClasses} />
         <input type="text" name="phone" placeholder="Phone Number" required className={inputClasses} />
-        <input type="text" name="company" placeholder="Company Name" required className={inputClasses} />
+        <input type="text" name="companyName" placeholder="Company Name" required className={inputClasses} />
         <input type="text" name="services" placeholder="Services" required className={inputClasses} />
-        <textarea name="description" placeholder="Brief Description of Requirement" required className={inputClasses + ' h-20'}></textarea>
-        <input type="text" name="contact_time" placeholder="Preferred Contact Time" className={inputClasses} />
+        <textarea name="requirement" placeholder="Brief Description of Requirement" required className={inputClasses + ' h-20'}></textarea>
+        <input type="text" name="contactTime"   placeholder="Preferred Contact Time" className={inputClasses} />
         <button type="submit" className='bg-[#20576E] mx-auto text-white p-2 w-1/4 flex justify-center rounded hover:bg-[#1b4451] transition'>Submit</button>
       </form>
 

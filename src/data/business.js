@@ -1,6 +1,7 @@
 export const businessData = [
     {
         heading: 'BUSINESS DEVELOPEMENT',
+        headingDesc: 'We offer comprehensive business development, deliver end-to-end growth solutions, ranging from business strategy consulting and market entry support to building distribution networks, forging industry collaborations, and driving projects from conception through execution.',
         topics:[
             {
             topic: 'Strategic Business Advisory',
@@ -26,6 +27,7 @@ export const businessData = [
     },
     {
       heading: 'BRANDING SOLUTIONS',
+      headingDesc: 'We help brands build powerful and consistent brand identities that connect with audiences and create long-term value for the brand.',
       topics:[
             {
             topic: 'Brand Building',
@@ -59,6 +61,7 @@ export const businessData = [
     },
     {
       heading: 'INTERIOR DESIGN & FABRICATION',
+      headingDesc: 'We have a designated team that focuses on interior design and fabrication solutions, tailored to create functional, aesthetic, and innovative spaces that reflect the brand identity and story, while maintaining practicality and comfort.',
       topics:
       [
             {
@@ -89,6 +92,7 @@ export const businessData = [
     },
     {
       heading: 'DIGITAL MARKETING',
+      headingDesc: 'We offer integrated Digital Marketing services designed to help your brand grow, engage, and succeed in the digital space. Our method of strategizing and executing combines creativity, strategy, and data-driven insights to deliver measurable results. From enhancing your online visibility to building meaningful customer connections, we provide end-to-end solutions tailored to your brand’s needs.',
       topics:
       [
            {
@@ -97,7 +101,7 @@ export const businessData = [
             },
             {
                 topic:'Content Development',
-                desc:''
+                desc:'We believe that your brand’s social media should narrate your brand story perfectly. We focus on creating content rooted in our belief. Our approach focuses on developing content that reflects your brand’s vision, values, and ideas—crafted in a way that customers instantly connect with and recognize, even at a glance.'
             },
             {
             topic: 'Website designing & development',
@@ -118,6 +122,7 @@ export const businessData = [
      ]},
     {
       heading: 'EVENTS',
+      headingDesc: 'We specialize in planning and executing events that are thoughtfully designed to meet your goals and leaving ever-lasting impressions in the minds of customers. From planning the concept to completion, our team manages every detail with precision and creativity, ensuring a seamless and memorable experience tailored to your needs.',
          topics:[
             {
             topic: 'Organizing Dealer Meets, Conferences for Professionals & Off-site Meets',
