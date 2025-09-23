@@ -12,5 +12,16 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+        <!-- Hidden form for Netlify build-time detection -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="phone" />
+      <input type="text" name="companyName" />
+      <input type="text" name="services" />
+      <textarea name="requirement"></textarea>
+      <input type="text" name="contactTime" />
+    </form>
   </body>
 </html>
