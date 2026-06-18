@@ -58,14 +58,14 @@ function Contact() {
   const inputClasses = 'mb-3 p-2 border border-gray bg-transparent text-black placeholder-gray-500 rounded focus:outline-none focus:ring-2 focus:ring-[#20576E]';
 
   return (
-    <section id='contact' className='flex flex-col md:flex-row items-stretch gap-10 justify-center bg-radial-ellipse-even py-10 px-5'>
+    <section id='contact' className='h-screen panel flex flex-col md:flex-row items-stretch gap-10 justify-center bg-radial-ellipse py-10 px-5'>
       
       {/* Service Form */}
       <form 
         ref={serviceFormRef} 
         name='contact' 
         method='POST' 
-        netlify
+        data-netlify="true"
         data-netlify-honeypot="bot-field"
         className='flex flex-col bg-transparent rounded p-6 w-full md:w-1/2' 
         onSubmit={handleServiceSubmit}
